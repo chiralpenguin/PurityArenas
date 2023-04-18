@@ -20,6 +20,7 @@ public class Config {
 
     private HashMap<String, CommentedConfigurationNode> arenas;
     private HashMap<String, String> messageMap;
+    private String spawnWorldKey;
     private int checkArenaInterval;
     private int customVoidHeight;
     private int duellingCountdown;
@@ -59,6 +60,7 @@ public class Config {
             messageMap.put(message.getKey().toString(), message.getValue().getString());
         }
 
+        this.spawnWorldKey = root.node("spawn-world").getString();
         this.checkArenaInterval = root.node("check-arena-interval").getInt();
         this.customVoidHeight = root.node("custom-void-height").getInt();
         this.duellingCountdown = root.node("duelling-countdown").getInt();
@@ -71,6 +73,10 @@ public class Config {
 
     public String ArenaFullMessage() {
         return messageMap.get("arena-full");
+    }
+
+    public String getSpawnWorldKey() {
+        return spawnWorldKey;
     }
 
     public int getCheckArenaInterval() {

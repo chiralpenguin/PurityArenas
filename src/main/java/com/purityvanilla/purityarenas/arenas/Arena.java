@@ -81,9 +81,9 @@ public abstract class Arena {
             BlockVector3 maxBlock = region.getMaximumPoint();
 
             BlockVector3 center = BlockVector3.at(
-                    maxBlock.getX() - (maxBlock.getX() - minBlock.getX()) / 2,
-                    maxBlock.getY() - (maxBlock.getY() - minBlock.getY()) / 2,
-                    maxBlock.getZ() - (maxBlock.getZ() - minBlock.getZ()) / 2
+                    minBlock.getX() + Math.floorDiv(maxBlock.getX() - minBlock.getX(), 2),
+                    minBlock.getY() + Math.floorDiv(maxBlock.getY() - minBlock.getY(), 2),
+                    minBlock.getZ() + Math.floorDiv(maxBlock.getZ() - minBlock.getZ(), 2)
             );
 
             Operation operation = new ClipboardHolder(clipboard)
@@ -100,9 +100,10 @@ public abstract class Arena {
     }
 
     public void TeleportPlayersForReset() {
+        World spawnWorld = PurityArenas.INSTANCE.getServer().getWorld(PurityArenas.Config().getSpawnWorldKey());
 
         for (UUID playerID : players) {
-            PurityArenas.INSTANCE.getServer().getPlayer(playerID).teleport(world.getSpawnLocation());
+            PurityArenas.INSTANCE.getServer().getPlayer(playerID).teleport(spawnWorld.getSpawnLocation());
         }
     }
 
@@ -140,7 +141,6 @@ public abstract class Arena {
     public String getArenaName() {
         return arenaName;
     }
-
 
     public int getMaxPlayers() {
         return maxPlayers;

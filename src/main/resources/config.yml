@@ -26,6 +26,7 @@ messages:
   arena-reset-warning: "&4[&cPurityArenas&4] &cArena &e{arena} &cwill be reset in &e{time}"
   arena-reset: "&4[&cPurityArenas&4] &cArena &e{arena} &cis being reset!"
 
+spawn-world: world
 check-arena-interval: 5
 custom-void-height: -128
 duelling-countdown: 600
