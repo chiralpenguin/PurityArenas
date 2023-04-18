@@ -8,3 +8,7 @@ commands:
     permission: purityarenas.arena
   reload:
     permission: purityarenas.reload
+
+permissions:
+  purityarenas.bypasscustomvoid:
+    default: false

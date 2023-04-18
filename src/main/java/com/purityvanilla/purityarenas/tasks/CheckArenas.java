@@ -19,6 +19,10 @@ public class CheckArenas extends BukkitRunnable {
             Location playerLoc = player.getLocation();
             BlockVector3 playerBlock = BlockVector3.at(playerLoc.getBlockX(), playerLoc.getBlockY(), playerLoc.getBlockZ());
 
+            if (playerBlock.getY() <= PurityArenas.Config().getCustomVoidHeight() && player.getHealth() > 0 && !player.hasPermission("purityarenas.bypasscustomvoid")) {
+                player.setHealth(0);
+            }
+
             for (Arena arena : arenaManager.getArenaMap().values()) {
                 ProtectedRegion region = arena.getRegion();
 

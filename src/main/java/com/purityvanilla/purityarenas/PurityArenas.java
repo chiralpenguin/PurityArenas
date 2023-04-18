@@ -27,7 +27,6 @@ public class PurityArenas extends JavaPlugin {
         GUIObject.InitGuiObjectMap();
 
         arenaManager = new ArenaManager();
-        arenaManager.loadArenaMap();
 
         checkArenasTask = new CheckArenas().runTaskTimer(this, 20L, Config().getCheckArenaInterval());
         incrementTimersTask = new IncrementTimers().runTaskTimer(this, 20L, 1);

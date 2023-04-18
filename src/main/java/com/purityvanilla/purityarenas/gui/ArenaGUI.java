@@ -3,7 +3,7 @@ package com.purityvanilla.purityarenas.gui;
 import com.purityvanilla.purityarenas.PurityArenas;
 import com.purityvanilla.purityarenas.arenas.Arena;
 import com.purityvanilla.purityarenas.arenas.ArenaFFA;
-import com.purityvanilla.purityarenas.util.BannerHelper;
+import com.purityvanilla.purityarenas.util.CustomBannerHelper;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -61,15 +61,15 @@ public class ArenaGUI extends GUIWindow {
 
 
         for (int i = 3; i < 5; i ++) {
-            inventory.setItem(i, BannerHelper.LetterBanner('F', Material.RED_BANNER, DyeColor.RED, DyeColor.WHITE));
+            inventory.setItem(i, CustomBannerHelper.LetterBanner('F', Material.RED_BANNER, DyeColor.RED, DyeColor.WHITE));
         }
-        inventory.setItem(5, BannerHelper.LetterBanner('A', Material.RED_BANNER, DyeColor.RED, DyeColor.WHITE));
+        inventory.setItem(5, CustomBannerHelper.LetterBanner('A', Material.RED_BANNER, DyeColor.RED, DyeColor.WHITE));
 
-        inventory.setItem(29, BannerHelper.LetterBanner('O', Material.BLUE_BANNER, DyeColor.BLUE, DyeColor.WHITE));
-        inventory.setItem(30, BannerHelper.LetterBanner('T', Material.BLUE_BANNER, DyeColor.BLUE, DyeColor.WHITE));
-        inventory.setItem(31, BannerHelper.LetterBanner('H', Material.BLUE_BANNER, DyeColor.BLUE, DyeColor.WHITE));
-        inventory.setItem(32, BannerHelper.LetterBanner('E', Material.BLUE_BANNER, DyeColor.BLUE, DyeColor.WHITE));
-        inventory.setItem(33, BannerHelper.LetterBanner('R', Material.BLUE_BANNER, DyeColor.BLUE, DyeColor.WHITE));
+        inventory.setItem(29, CustomBannerHelper.LetterBanner('O', Material.BLUE_BANNER, DyeColor.BLUE, DyeColor.WHITE));
+        inventory.setItem(30, CustomBannerHelper.LetterBanner('T', Material.BLUE_BANNER, DyeColor.BLUE, DyeColor.WHITE));
+        inventory.setItem(31, CustomBannerHelper.LetterBanner('H', Material.BLUE_BANNER, DyeColor.BLUE, DyeColor.WHITE));
+        inventory.setItem(32, CustomBannerHelper.LetterBanner('E', Material.BLUE_BANNER, DyeColor.BLUE, DyeColor.WHITE));
+        inventory.setItem(33, CustomBannerHelper.LetterBanner('R', Material.BLUE_BANNER, DyeColor.BLUE, DyeColor.WHITE));
 
     }
 

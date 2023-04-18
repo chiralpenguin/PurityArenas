@@ -27,5 +27,6 @@ messages:
   arena-reset: "&4[&cPurityArenas&4] &cArena &e{arena} &cis being reset!"
 
 check-arena-interval: 5
+custom-void-height: -128
 duelling-countdown: 600
 verbose: false

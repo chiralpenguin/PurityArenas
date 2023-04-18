@@ -21,6 +21,7 @@ public class Config {
     private HashMap<String, CommentedConfigurationNode> arenas;
     private HashMap<String, String> messageMap;
     private int checkArenaInterval;
+    private int customVoidHeight;
     private int duellingCountdown;
     private Boolean verbose;
 
@@ -59,6 +60,7 @@ public class Config {
         }
 
         this.checkArenaInterval = root.node("check-arena-interval").getInt();
+        this.customVoidHeight = root.node("custom-void-height").getInt();
         this.duellingCountdown = root.node("duelling-countdown").getInt();
         this.verbose = root.node("verbose").getBoolean();
     }
@@ -73,6 +75,10 @@ public class Config {
 
     public int getCheckArenaInterval() {
         return checkArenaInterval;
+    }
+
+    public int getCustomVoidHeight() {
+        return customVoidHeight;
     }
 
     public int getDuellingCountdown() {

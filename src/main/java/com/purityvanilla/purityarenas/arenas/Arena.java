@@ -17,10 +17,10 @@ import com.sk89q.worldedit.session.ClipboardHolder;
 import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.internal.platform.WorldGuardPlatform;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
+import com.sk89q.worldguard.protection.util.WorldEditRegionConverter;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
-import org.bukkit.util.BlockVector;
 import org.spongepowered.configurate.CommentedConfigurationNode;
 
 import java.io.File;
@@ -69,7 +69,7 @@ public abstract class Arena {
 
         Clipboard clipboard = null;
         try {
-            File file = new File("plugins/WorldEdit/schematics/" + schematicName + ".schem");
+            File file = new File("plugins/FastAsyncWorldEdit/schematics/" + schematicName + ".schem");
             ClipboardReader reader = ClipboardFormats.findByFile(file).getReader(new FileInputStream(file));
             clipboard = reader.read();
         } catch (IOException e) {
@@ -96,7 +96,7 @@ public abstract class Arena {
         }
 
         // TODO Kill all entities in arena at reset
-        BukkitAdapter.adapt(this.world).getEntities((Region) region).forEach(Entity::remove);
+        BukkitAdapter.adapt(this.world).getEntities(WorldEditRegionConverter.convertToRegion(region)).forEach(Entity::remove);
     }
 
     public void TeleportPlayersForReset() {

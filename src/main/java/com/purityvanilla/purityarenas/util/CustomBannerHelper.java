@@ -9,7 +9,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BannerMeta;
 
-public class BannerHelper {
+public class CustomBannerHelper {
 
     /*
     Pattern orders for each letter: https://www.gamergeeks.net/apps/minecraft/banners/letters#letter-f
