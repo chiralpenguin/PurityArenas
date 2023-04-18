@@ -1,0 +1,31 @@
+# PurityArenas - PVP Arena management plugin for FFA and Duelling arenas.
+# Plugin utilises WorldGuard and its API to track region information.
+arenas:
+  arena1:
+    world-key: world
+    region-key: region1
+    max-players: 25
+    reset-enabled: true
+    schematic-name: region1
+    arena-type: FFA
+    spawn-location: 0,64.0,0
+  arena2:
+    world-key: world
+    region-key: region2
+    max-players: 2
+    reset-enabled: true
+    schematic-name: region2
+    arena-type: DUEL
+    team-spawn-locations:
+      - -20,64,-20
+      - 20,64,20
+    team-size-limit: 1
+
+messages:
+  arena-full: "&4[&cPurityArenas&4] &cThat arena is full! Please select another arena."
+  arena-reset-warning: "&4[&cPurityArenas&4] &cArena &e{arena} &cwill be reset in &e{time}"
+  arena-reset: "&4[&cPurityArenas&4] &cArena &e{arena} &cis being reset!"
+
+check-arena-interval: 5
+duelling-countdown: 600
+verbose: false

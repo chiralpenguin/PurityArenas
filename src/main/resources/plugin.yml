@@ -1,0 +1,10 @@
+name: PurityArenas
+main: com.purityvanilla.purityarenas.PurityArenas
+version: 1.0
+api-version: 1.18
+depend: [WorldEdit, WorldGuard]
+commands:
+  arena:
+    permission: purityarenas.arena
+  reload:
+    permission: purityarenas.reload
