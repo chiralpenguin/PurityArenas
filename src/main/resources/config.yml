@@ -29,5 +29,7 @@ messages:
 spawn-world: world
 check-arena-interval: 5
 custom-void-height: -128
+custom-void-worlds:
+  - world
 duelling-countdown: 600
 verbose: false

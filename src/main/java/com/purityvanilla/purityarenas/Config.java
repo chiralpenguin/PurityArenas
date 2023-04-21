@@ -3,6 +3,7 @@ package com.purityvanilla.purityarenas;
 import it.unimi.dsi.fastutil.Hash;
 import org.spongepowered.configurate.CommentedConfigurationNode;
 import org.spongepowered.configurate.ConfigurateException;
+import org.spongepowered.configurate.serialize.SerializationException;
 import org.spongepowered.configurate.yaml.YamlConfigurationLoader;
 
 import java.io.File;
@@ -12,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Config {
@@ -23,6 +25,7 @@ public class Config {
     private String spawnWorldKey;
     private int checkArenaInterval;
     private int customVoidHeight;
+    private List<String> customVoidWorlds;
     private int duellingCountdown;
     private Boolean verbose;
 
@@ -63,6 +66,11 @@ public class Config {
         this.spawnWorldKey = root.node("spawn-world").getString();
         this.checkArenaInterval = root.node("check-arena-interval").getInt();
         this.customVoidHeight = root.node("custom-void-height").getInt();
+        try {
+            this.customVoidWorlds = root.node("custom-void-worlds").getList(String.class);
+        } catch (SerializationException e) {
+            e.printStackTrace();
+        }
         this.duellingCountdown = root.node("duelling-countdown").getInt();
         this.verbose = root.node("verbose").getBoolean();
     }
@@ -85,6 +93,10 @@ public class Config {
 
     public int getCustomVoidHeight() {
         return customVoidHeight;
+    }
+
+    public List<String> getCustomVoidWorlds() {
+        return customVoidWorlds;
     }
 
     public int getDuellingCountdown() {
